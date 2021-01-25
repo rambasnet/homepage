@@ -22,10 +22,10 @@ class Schedule extends React.Component {
       classes: [
         {name: "JavaScript",
         loc: "CH 276",
-        start_time: "10:00",
+        start_time: "3:00",
         days: ["Mon", "Wed", "Fri"],
-        time: "10-10:50",
-        includes: "10:30",
+        time: "3-3:50",
+        includes: "3:30",
         row_span: 2},
         {name: "Cyber",
         loc: "CH 276",
@@ -36,10 +36,10 @@ class Schedule extends React.Component {
         row_span: 2},
         {name: "ML",
         loc: "CH 276",
-        start_time: "3:00",
+        start_time: "10:00",
         days: ["Mon", "Wed", "Fri"],
-        time: "3-3:50",
-        includes: "3:30",
+        time: "10-10:50",
+        includes: "10:30",
         row_span: 2}
       ]
       };
