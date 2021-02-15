@@ -28,6 +28,7 @@ class Resources extends React.Component {
           <div className="col-sm-8">
             <h2><a name="cyberSecurity">Cyber Security</a></h2>
             <ul>
+              <li><a href="https://www.cssia.org/interactives/" rel="noreferrer" target="_blank">Cybersecurity Interactives</a></li>
               <li><a href="http://ictf.cs.ucsb.edu/" target="_blank" rel="noreferrer">International Collegiate Hacking Competition</a></li>
               <li><a href="http://ructf.org/e/2013/" target="_blank" rel="noreferrer"> Online International challenge of information security</a></li>
               <li><a href="http://docs.kali.org/pdf/kali-book-en.pdf" target="_blank" rel="noreferrer"> Kali Linux Book</a></li>
