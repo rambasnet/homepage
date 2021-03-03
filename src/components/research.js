@@ -4,7 +4,10 @@ import Publication from './publication';
 class Research extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      'interests': ['Phishing attack detection', 'Data science and applications', 
+      'Network and web application security', 'Computer Science pedagogy']
+    };
   }
 
   render() {
@@ -18,11 +21,12 @@ class Research extends React.Component {
             </div>
             <br />
             <h5>Research Interests</h5>
-            <ul className="list-group">
-              <li className="list-group-item">Phishing attack detection</li>
-              <li className="list-group-item">Data science and applications</li>
-              <li className="list-group-item">Network and web application security</li>
-              <li className="list-group-item">Computer Science pedagogy</li>
+              <ul className="list-group">
+              {
+                this.state.interests.map( (interest) => (
+                  <li className="list-group-item">{interest}</li>
+              ))
+              }
             </ul>
             <br />
             <h5><a href="https://scholar.google.com/citations?user=--sMoY0AAAAJ&amp;hl=en" target="_blank" rel="noreferrer">Google Scholar</a></h5>
