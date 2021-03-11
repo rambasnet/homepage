@@ -38,21 +38,27 @@ class Navbar extends React.Component {
         this.state = {
             nav_text: ['Home', 'Teaching', 'Research', 'Resources', 'Contact'],
             //nav_urls:['index', 'teaching.html', 'research.html', 'resources.html', 'contact.html'],
-            activeIndex: 0 //current navigation id
+            activeIndex: 0, //current navigation id
+            menu: false
         };
+        this.toggleMenu = this.toggleMenu.bind(this);
     }
     
     handleClick = (index) => this.setState({ activeIndex: index });
 
+    toggleMenu() {
+      this.setState({menu: !this.state.menu})
+    }
+
     render() {
+      const show = (this.state.menu) ? "show" : "";
         return (
           <Router>
             <nav className="navbar sticky-top navbar-expand-sm bg-dark navbar-dark">
-                <a className="navbar-brand" href="index.html">&nbsp;</a>
-                <button className="navbar-toggler" type="button" dataToggle="collapse" dataTarget="#collapsibleNavbar">
+                <button className="navbar-toggler" type="button" onClick={ this.toggleMenu }>
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse" id="collapsibleNavbar">
+                <div className={"collapse navbar-collapse "+show} id="collapsibleNavbar">
                     <ul className="navbar-nav">
                         {
                           this.state.nav_text.map( (value, i) =>

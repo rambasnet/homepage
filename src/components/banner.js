@@ -8,8 +8,30 @@ class Banner extends React.Component {
       name: "Dr. Ram Basnet",
       title: "Associate Professor of Computer Science",
       univer_url: 'http://www.coloradomesa.edu',
-      univer_logo: process.env.PUBLIC_URL+'/assets/cmu-logo.png'
+      univer_logo: process.env.PUBLIC_URL+'/assets/cmu-logo.png',
+      hide_logo: false
+    };
+  }
+
+  componentDidMount() {
+    window.addEventListener("resize", this.resize.bind(this));
+    this.resize();
+  }
+
+  resize() {
+    let currentHideLogo = (window.innerWidth <= 760);
+    if (currentHideLogo !== this.state.hide_logo) {
+      this.setState({hide_logo: window.innerWidth <= 760});
+      if (this.state.hide_logo)
+        document.getElementById('logo').style.display = "none";
+      else
+      document.getElementById('logo').style.display = "block";
     }
+
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.resize.bind(this));
   }
 
   render() {
@@ -17,13 +39,13 @@ class Banner extends React.Component {
       position: "absolute",
       top: "5px",
       left: "10px",
-      height: "75px"
-    };
+      height: "75px",
+    };  
 
     return (
       <div>
         <a href={this.state.univer_url} target="_blank" rel="noreferrer">
-          <img src={this.state.univer_logo} style={imgStyle} alt="University Logo"/>
+          <img id="logo" src={this.state.univer_logo} style={imgStyle} alt="University Logo"/>
         </a>
         <h1>{this.state.name}</h1>
         <p>{this.state.title}</p>
